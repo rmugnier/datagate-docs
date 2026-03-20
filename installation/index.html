@@ -8,10 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://mydomain.org/mysite/installation/">
+        <link rel="canonical" href="https://rmugnier.github.io/datagate-docs/installation/">
       
       
-        <link rel="prev" href="../d%C3%A9veloppement/">
+        <link rel="prev" href="../d%C3%A9veloppement/documentation/">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Index - Documentation pour Datagate</title>
+        <title>Installation - Documentation pour Datagate</title>
       
     
     
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -101,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Installation
             
           </span>
         </div>
@@ -323,7 +328,30 @@
   
   
   <span class="md-ellipsis">
-    Développement
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../d%C3%A9veloppement/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation
     
   </span>
   
@@ -400,18 +428,103 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Index
+    Installation
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prérequis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prérequis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installer-datagate-chez-un-hebergeur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installer Datagate chez un hébergeur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulation-de-podman" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manipulation de podman
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -442,6 +555,67 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prérequis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prérequis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installer-datagate-chez-un-hebergeur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installer Datagate chez un hébergeur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulation-de-podman" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manipulation de podman
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -457,26 +631,79 @@
 
 
 
-  <h1>Index</h1>
-
-<pre><code class="language-bash">sudo apt install podman
-</code></pre>
-<pre><code class="language-bash">podman kube play --replace \
---configmap=./datagate-stack-webhookd/configmap.yaml \
---configmap=./datagate-stack-common/apachephp-configmap.yaml \
---configmap=./datagate-stack-common/github-configmap.yaml \
+<h1 id="installation">Installation</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Datagate est composé de nombreux services et une "installation" par conteneurs permet de rendre facilement accessible et reproductible sa mise en place.</p>
+<h2 id="prerequis">Prérequis</h2>
+<h3 id="code-source">Code source</h3>
+<p>Il vous faudra le code source des conteneurs pour pouvoir les exécuter.</p>
+<p>Actuellement ce code est dans une Pull Request (GR) sur le dépôt GitHub de Datagate, voici le lien : <a href="https://github.com/cWam-zz/datagate/pull/5/commits">PR</a></p>
+<p>Il vous faudra prendre le dernier commit de cette PR et cliquer sur "Browse files" pour accéder à l'arborescence du code source des conteneurs.
+Dans le menu de droite, cliquez sur "Code" puis "Download ZIP" pour télécharger le code source des conteneurs.</p>
+<p>Seul le dossier <code>containers</code> est utilisé pour l'installation.</p>
+<h2 id="installer-datagate-chez-un-hebergeur">Installer Datagate chez un hébergeur</h2>
+<p>L'installation a été testée avec Debian Trixie.</p>
+<p>Il est indispensable de le lancer en "rootless" : il faut vous connecter avec un utilisateur qui est sudoer.
+Certains hébergeurs crée l'utilisateur automatiquement sinon de multiple guides existent sur internet pour créer un utilisateur sudoer.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Lancer les conteneurs en tant que <strong>root</strong> entrainera des erreurs car des configurations réseaux complémentaires sont nécessaires</p>
+</div>
+<p>Dans un premier temps, nous allons déposer le code source des conteneurs sur le serveur que vous avez chez un hébergeur.</p>
+<p>On utilisera <code>scp</code> pour cela, utilitaire disponible sur la plupart des systèmes d'exploitation. voici un exemple de commande à exécuter depuis votre terminal local, ici le terminal est PowerShell sur Windows :
+<div class="highlight"><pre><span></span><code><span class="n">scp</span> <span class="n">-r</span> <span class="n">-i</span> <span class="p">.\.</span><span class="n">ssh</span><span class="p">\</span><span class="n">id_pubkey</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">rmugnier</span><span class="p">\</span><span class="n">Downloads</span><span class="p">\</span><span class="n">datagate</span><span class="p">\</span><span class="n">datagate</span><span class="p">\</span><span class="n">containers</span> <span class="n">linuxuser</span><span class="nv">@207</span><span class="p">.</span><span class="n">148</span><span class="p">.</span><span class="n">80</span><span class="p">.</span><span class="n">238</span><span class="p">:~/</span>
+</code></pre></div>
+De nombreux paramètres sont à adapter selon votre configuration, voici une explication de ceux à remplacer dans l'exemple :
+- <code>.\.ssh\id_pubkey</code> : chemin vers votre clé publique SSH que vous avez configuré chez votre hébergeur
+- <code>C:\Users\rmugnier\Downloads\datagate\datagate\containers</code> : chemin vers le dossier <code>containers</code> que vous avez téléchargé depuis la PR
+- <code>linuxuser</code> : nom de l'utilisateur que vous utilisez pour vous connecter à votre serveur
+- <code>207.148.80.238</code> : adresse IP de votre serveur</p>
+<p>Connectez-vous ensuite à votre serveur avec la même clé SSH :
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span> <span class="n">-i</span> <span class="p">.\.</span><span class="n">ssh</span><span class="p">\</span><span class="n">id_pubkey</span> <span class="n">linuxuser</span><span class="nv">@207</span><span class="p">.</span><span class="n">148</span><span class="p">.</span><span class="n">80</span><span class="p">.</span><span class="n">238</span>
+</code></pre></div></p>
+<p>On s'assuera que les paquets présents sur votre serveur sont à jour avec les commandes suivantes :
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</code></pre></div></p>
+<p>On procède ensuite à l'installation de <code>podman</code> qui est le moteur de conteneurs utilisé pour exécuter les conteneurs de Datagate :
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>podman
+</code></pre></div></p>
+<p>On se positionne ensuite dans le dossier <code>containers</code> que vous avez téléchargé et transféré sur votre serveur :
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/containers/
+</code></pre></div></p>
+<p>Il est fort possible que votre hébergeur a paramétré votre serveur pour que les ports soient bloqués par défaut, on peut utiliser un parefeu simple comme <code>ufw</code> pour ouvrir les ports nécessaires au bon fonctionnement de Datagate :
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ufw
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">22</span>/tcp
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">8081</span>:8085/tcp
+sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>status
+</code></pre></div></p>
+<h2 id="manipulation-de-podman">Manipulation de podman</h2>
+<p>On peut ensuite lancer les conteneurs de Datagate avec la commande suivante :</p>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>kube<span class="w"> </span>play<span class="w"> </span>--replace<span class="w"> </span><span class="se">\</span>
+--configmap<span class="o">=</span>./datagate-stack-webhookd/configmap.yaml<span class="w"> </span><span class="se">\</span>
+--configmap<span class="o">=</span>./datagate-stack-common/apachephp-configmap.yaml<span class="w"> </span><span class="se">\</span>
+--configmap<span class="o">=</span>./datagate-stack-common/github-configmap.yaml<span class="w"> </span><span class="se">\</span>
 ./datagate-stack-kube.yaml
-</code></pre>
-<pre><code class="language-bash">podman kube down ./datagate-stack-kube.yaml \
-&amp;&amp; podman volume prune -f \
-&amp;&amp; podman network prune -f
-</code></pre>
+</code></pre></div>
+<p>Cette commande permet de nettoyer les conteneurs et ressources réseaux créés par un précédent lancement :</p>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>kube<span class="w"> </span>down<span class="w"> </span>./datagate-stack-kube.yaml<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>podman<span class="w"> </span>volume<span class="w"> </span>prune<span class="w"> </span>-f<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>podman<span class="w"> </span>network<span class="w"> </span>prune<span class="w"> </span>-f
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Perte de données irréversible</p>
+<p>Cette commande supprime toutes les données présentes dans les volumes, comme par exemple la base de données.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

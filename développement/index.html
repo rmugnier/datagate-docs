@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://mydomain.org/mysite/d%C3%A9veloppement/">
+        <link rel="canonical" href="https://rmugnier.github.io/datagate-docs/d%C3%A9veloppement/">
       
       
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../installation/">
+        <link rel="next" href="documentation/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Développement - Documentation pour Datagate</title>
+        <title>Introduction - Documentation pour Datagate</title>
       
     
     
@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#developpement" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -108,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Développement
+              Introduction
             
           </span>
         </div>
@@ -336,21 +331,42 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Développement
+    Introduction
     
   </span>
   
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -416,7 +432,7 @@
   
   
   <span class="md-ellipsis">
-    Index
+    Installation
     
   </span>
   
@@ -451,8 +467,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -468,24 +482,9 @@
 
 
 
-<h1 id="developpement">Développement</h1>
-<h1 id="documentation">Documentation</h1>
-<h2 id="introduction">Introduction</h2>
-<p>La documentation est rédigée en Markdown et est située dans le répertoire <code>docs/</code> pour pouvoir être maintenue à jour tout au long du développement.</p>
-<p>Elle est générée avec <a href="https://www.mkdocs.org/">MkDocs</a> et le thème <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.</p>
-<p>Il est conseillé d'utiliser le package and project manager <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> pour gérer les dépendances et les environnements virtuels.</p>
-<h2 id="exporter-en-pdf">Exporter en PDF</h2>
-<p>Le plugin MkDocs utilisé est <a href="https://github.com/domWalters/mkdocs-to-pdf">mkdocs-to-pdf</a>.</p>
-<p>Le moteur de rendu utilisé par ce plugin est <a href="https://weasyprint.org/">WeasyPrint</a>. Celui-ci ne peut pas être installé par uv, il est nécessaire de l'installer manuellement.</p>
-<p>Si vous êtes sous Windows, le plus simple est de l'installer dans WSL (Windows Subsystem for Linux). Vous pouvez consulter le <a href="https://learn.microsoft.com/fr-fr/windows/wsl/install">guide d'installation de WSL</a> si nécessaire, la commande si après est adaptée pour la distribution Linux WSL <code>Debian</code>  :</p>
-<pre><code class="language-bash">sudo apt install weasyprint
-</code></pre>
-<p>En effet cela vous évitera d'installer MSYS2 et GTK sur votre Windows.</p>
-<p>Vous devrez executer les commandes python depuis le répertoire de la documentation dans WSL grâce à SHIFT + clic droit puis "Ouvrir l'interpréteur de commandes Linux ici" :</p>
-<p><img alt="" src="../assets/screenshots/dev-export-pdf-01.png" /></p>
-<p>La commande à exécuter pour générer le site web statique et le PDF est :</p>
-<pre><code class="language-bash">uv run mkdocs build
-</code></pre>
+  <h1>Introduction</h1>
+
+<p>Cette section permet de documenter l'ensemble des processus de développement de Datagate, ainsi que les outils utilisés pour cela.</p>
 
 
 
